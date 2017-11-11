@@ -1,0 +1,18 @@
+[
+{
+    "id": 1,
+    "username": "pesho",
+    "password": "123456",
+    "email": "pesho@mail.com",
+    "phone": "0889 999 999",
+    "country": "Bulgaria"
+  },
+  {
+    "id": 2,
+    "username": "gosho",
+    "password": "123456",
+    "email": "gosho@mail.com",
+    "phone": "0889 999 999",
+    "country": "Bulgaria"
+  }
+]
