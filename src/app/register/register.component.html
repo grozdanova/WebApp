@@ -1,0 +1,23 @@
+<div class="container">
+  <form class="form-register" (ngSubmit)="register()" >
+    <h2 class="form-register-heading">Register</h2>
+    <label for="inputNickname" class="sr-only">Nickname</label>
+    <input type="text" id="inputNickame" name="name" [(ngModel)]="user.name" class="form-control" placeholder="Nickname" required="" autofocus="">
+    <label for="inputEmail" class="sr-only" >Email address</label>
+    <input type="email" id="inputEmail" name="email" [(ngModel)]="user.email" class="form-control"  placeholder="Email address" required>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" name="password" [(ngModel)]="user.password" class="form-control" placeholder="Password" required>
+    <label for="confirmPassword" class="sr-only">Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPass" [(ngModel)]="user.confirmPass" class="form-control" placeholder="Confirm Password" required>
+    <input type="tel" name="phone" placeholder="0888 888 888" minlength="8" maxlength="15" name="phone" [(ngModel)]="user.phone" required class="form-control">
+    <div class="form-group">
+      <label for="sel1">Select country:</label>
+      <select [(ngModel)]="selectedCountry" name="country" (ngModelChange)="onChangeObj($event)" class="form-control">
+        <option *ngFor="let c of user.country">
+          {{c.name}}
+        </option>
+      </select>
+    </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="register()">Register</button>
+  </form>
+</div>

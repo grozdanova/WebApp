@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "pesho",
+      "password": "123456",
+      "email": "pesho@mail.com",
+      "phone": "0889 999 999",
+      "country": "Bulgaria"
+    },
+    {
+      "id": 2,
+      "username": "gosho",
+      "password": "123456",
+      "email": "gosho@mail.com",
+      "phone": "0889 999 999",
+      "country": "Bulgaria"
+    },
+    {
+      "id": 3,
+      "username": "Angelina Grozdanova",
+      "password": "123456",
+      "email": "a.grozdanova90@gmail.com",
+      "country": "USA",
+      "phone": "0887 047 712"
+    },
+    {
+      "id": 4,
+      "username": "Angelina Grozdanova",
+      "password": "123456",
+      "email": "a.grozdanova90@gmail.com",
+      "country": "USA",
+      "phone": "0887 047 712"
+    },
+    {
+      "id": 5,
+      "username": "Angelina",
+      "password": "let lastUser",
+      "email": "gin_cheto@abv.bg",
+      "country": "Canada",
+      "phone": "0887047712"
+    },
+    {
+      "id": 6,
+      "username": "Angelina",
+      "password": "let lastUser",
+      "email": "gin_cheto@abv.bg",
+      "country": "Canada",
+      "phone": "0887047712"
+    },
+    {
+      "id": 7,
+      "username": "mincho4",
+      "password": "123456",
+      "email": "mincho4@mail.bg",
+      "country": "Bulgaria",
+      "phone": "0889 999 999"
+    }
+  ]
+}
