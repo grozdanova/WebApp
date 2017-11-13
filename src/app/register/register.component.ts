@@ -1,13 +1,10 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import {Validator} from '../validator';
-import { Injectable } from '@angular/core';
-import {Jsonp, URLSearchParams} from '@angular/http';
-import { Http, Response } from '@angular/http';
+import { Component, OnInit, ViewContainerRef, Injectable } from '@angular/core';
+import { Validator } from '../validator';
+import { Jsonp, URLSearchParams, Http, Response } from '@angular/http';
 import { Router } from '@angular/router';
-import {Observable, Observer } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { ToastrService } from 'toastr-ng2';
 import { UserService } from '../service/user.service';
-
 
 @Component({
   selector: 'app-register',
@@ -19,15 +16,16 @@ import { UserService } from '../service/user.service';
 export class RegisterComponent {
   currentUser;
   id: string;
-  user = { name: '', password: '', confirmPass: '', email: '', phone: '', country: [
-    {name: 'Bulgaria'},
-    {name: 'Canada'},
-    {name: 'France'},
-    {name: 'USA'}
-  ]};
-
-selectedCountry = this.user.country[1];
-data: any;
+  user = {
+    name: '', password: '', confirmPass: '', email: '', phone: '', country: [
+      { name: 'Bulgaria' },
+      { name: 'Canada' },
+      { name: 'France' },
+      { name: 'USA' }
+    ]
+  };
+  selectedCountry = this.user.country[0];
+  data: any;
 
   onChangeObj(newObj) {
     this.selectedCountry = newObj;
@@ -69,7 +67,7 @@ data: any;
       return;
     }
     if (!Validator.validatePhone(this.user.phone)) {
-      this.toastrService.error('Phone is not in the correct format!');
+      this.toastrService.error('Phone number must be between 6 and 15 digits long!');
       return;
     }
 
@@ -81,13 +79,12 @@ data: any;
       country: this.selectedCountry,
       phone: this.user.phone
     };
-    console.log(user);
     this.currentUser = user;
     this.userService.register(user).subscribe(
-    data => {
-      this.toastrService.success('Succesfully registered!');
-      this.router.navigate(['/home']);
-    });
+      data => {
+        this.toastrService.success('Succesfully registered!');
+        this.router.navigate(['/home']);
+      });
   }
 
 }

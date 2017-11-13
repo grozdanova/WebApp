@@ -7,15 +7,14 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-loggedUser: string = '';
-currentUser;
+  loggedUser;
+  currentUser;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.loggedUser = this.userService.getLoggedUser();
     this.currentUser = JSON.parse(this.loggedUser);
-    console.log(this.currentUser);
-    
+    // console.log(this.currentUser);
   }
 
 }

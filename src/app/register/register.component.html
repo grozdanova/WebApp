@@ -12,8 +12,8 @@
     <input type="tel" name="phone" placeholder="0888 888 888" minlength="8" maxlength="15" name="phone" [(ngModel)]="user.phone" required class="form-control">
     <div class="form-group">
       <label for="sel1">Select country:</label>
-      <select [(ngModel)]="selectedCountry" name="country" (ngModelChange)="onChangeObj($event)" class="form-control">
-        <option *ngFor="let c of user.country">
+      <select placeholder="c" [(ngModel)]="selectedCountry" name="country" (ngModelChange)="onChangeObj($event)" class="form-control" required>
+        <option *ngFor="let c of user.country" [ngValue]="c">
           {{c.name}}
         </option>
       </select>

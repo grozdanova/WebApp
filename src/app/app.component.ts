@@ -7,14 +7,12 @@ import { UserService } from '../app/service/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  loggedUser: string = '';
-mail;
+  loggedUser;
 
   constructor(private userService: UserService) { }
 
-  ngOnInit () {
+  ngOnInit() {
     this.loggedUser = this.userService.getLoggedUser();
-
   }
   ngDoCheck() {
     this.loggedUser = this.userService.getLoggedUser();

@@ -1,0 +1,38 @@
+<div class="container">
+
+<h1>
+  Update profile!
+</h1>
+<label for="basic-url">Your username: {{currentUser.username}}</label>
+<div class="input-group">
+  <input type="text" class="form-control" [(ngModel)]="currentUser.username" placeholder="New username" aria-label="Username">
+  <span class="input-group-btn">
+    <button class="btn btn-secondary" type="button" (click)="changeUsername()" >Change!</button>
+  </span>
+</div>
+<div class="input-group">
+<input type="password" #pass id="inputPassword" name="password" class="form-control" placeholder="New Password">
+<br>
+<input type="password" #conf id="inputConfirmPassword" name="confirm-password" class="form-control" placeholder="Confirm New Password">
+<span class="input-group-btn">
+  <button class="btn btn-secondary" (click)="changePassword(pass.value, conf.value)" type="button">Change!</button>
+</span>
+</div>
+<label for="basic-url">Your phone: {{currentUser.phone}}</label>
+<div class="input-group">
+<input type="tel" #phone class="form-control" placeholder="phone">
+<span class="input-group-btn">
+  <button class="btn btn-secondary" type="button" (click)="changePhone(phone.value)">Change!</button>
+</span>
+</div>
+
+<div class="form-group">
+  <label for="sel1">Country:</label>
+  <select  [(ngModel)]="selectedCountry" name="country" (ngModelChange)="onChangeObj($event)" class="form-control">
+    <option *ngFor="let c of countries" >
+      {{c.name}}
+    </option>
+  </select>
+</div>
+<p><a class="btn btn-secondary" (click)="changeCountry()" role="button">Change country</a></p>
+</div>

@@ -2,27 +2,19 @@
   "users": [
     {
       "id": 1,
-      "username": "pesho",
+      "username": "pesho3",
       "password": "123456",
       "email": "pesho@mail.com",
       "phone": "0889 999 999",
-      "country": "Bulgaria"
+      "country": "Canada"
     },
     {
       "id": 2,
-      "username": "gosho",
+      "username": "gosho-updated",
       "password": "123456",
       "email": "gosho@mail.com",
       "phone": "0889 999 999",
       "country": "Bulgaria"
-    },
-    {
-      "id": 3,
-      "username": "Angelina Grozdanova",
-      "password": "123456",
-      "email": "gin_cheto@abv.bg",
-      "country": "Canada",
-      "phone": "0889 999 999"
     }
   ]
 }

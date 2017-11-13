@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
@@ -16,16 +15,15 @@ import { CommonModule } from '@angular/common';
 
 import { UserService } from './service/user.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 const appRoutes: Routes = [
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   {path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: UserProfileComponent }
+  { path: 'profile', component: UserProfileComponent },
+  { path: 'profile/:username', component: UpdateProfileComponent }
 ];
 
 @NgModule({
@@ -36,7 +34,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     UserProfileComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
