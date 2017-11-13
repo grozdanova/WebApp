@@ -14,8 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { ToastrModule } from 'toastr-ng2';
 import { CommonModule } from '@angular/common';
 
-// import { firebaseConfig } from '../environments/firebase.config';
 import { UserService } from './service/user.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
   { path: '',
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   {path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  // { path: 'profile', component: UserProfileComponent }
+  { path: 'profile', component: UserProfileComponent }
 ];
 
 @NgModule({
@@ -34,7 +34,9 @@ const appRoutes: Routes = [
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserProfileComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { ToastrService } from 'toastr-ng2';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class UserService {
-  STORAGE_AUTH_KEY = 'SPECIAL-AUTHENTICATION-KEY';
+  loggedUser: string = '';
+data;
+  constructor(private http: Http, private toastrService: ToastrService, private router: Router) { }
 
-  constructor(private http: Http) { }
+  getLoggedUser(): string {
+    this.loggedUser = localStorage.getItem('web-user');
+    return this.loggedUser;
+  }
 
   createAuthorizationHeader(headers: Headers) {
     headers.append('Authorization', 'Basic ' +
@@ -17,6 +24,11 @@ export class UserService {
    return this.http.get('http://localhost:3000/users')
    .map(result => result.json());
   }
+  getUser() {
+    // return this.http.get('http://localhost:3000/users?email=' + email)
+    // .map(result => result.json());
+  }
+
 
   register(user: any) {
     let headers = new Headers();
@@ -28,4 +40,12 @@ export class UserService {
       headers: headers
     }).map(res => res.json());
   }
+
+
+  logout() {
+    localStorage.removeItem('web-user');
+    this.toastrService.success('Succesfully logged out!');
+    this.router.navigate(['/home']);
+  }
+
 }

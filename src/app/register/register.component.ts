@@ -39,7 +39,6 @@ data: any;
 
   register() {
     let lastUser = this.data[this.data.length - 1];
-    console.log(lastUser.id);
 
     if (!Validator.validateName(this.user.name)) {
       this.toastrService.error('Username is not in the correct format!');
@@ -82,7 +81,8 @@ data: any;
       country: this.selectedCountry,
       phone: this.user.phone
     };
-
+    console.log(user);
+    this.currentUser = user;
     this.userService.register(user).subscribe(
     data => {
       this.toastrService.success('Succesfully registered!');

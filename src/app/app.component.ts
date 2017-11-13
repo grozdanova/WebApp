@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { UserService } from '../app/service/user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  loggedUser: string = '';
+mail;
+
+  constructor(private userService: UserService) { }
+
+  ngOnInit () {
+    this.loggedUser = this.userService.getLoggedUser();
+
+  }
+  ngDoCheck() {
+    this.loggedUser = this.userService.getLoggedUser();
+  }
+
+  logout(): void {
+    this.userService.logout();
+    this.loggedUser = '';
+  }
 }
